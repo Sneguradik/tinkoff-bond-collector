@@ -11,7 +11,7 @@ from tinkoff.invest import (
     SubscriptionAction,
 )
 
-TOKEN = ""
+TOKEN = "172.16.207.144 login: liqadmin pass: Lq!23!23"
 
 tickers = ['RU000A10BBW8', 'RU000A105QX1', 'RU000A105BY1', 'RU000A105RZ4',
            'RU000A105WH2', 'RU000A101EQ0', 'RU000A102QN9', 'RU000A103S97', 'RU000A103SA0']  # , 'MOEX' , 'POSI'
@@ -42,7 +42,7 @@ def main():
     partition_counter = 0
     generation_counter = 1
     df = pd.DataFrame(columns=["ticker", "time", "ask", "ask_vol", "bid", "bid_vol"])
-    os.mkdir("data")
+    if not os.path.exists("data"): os.mkdir("data")
     instrr = instr()
     instr_ob = []
     for key in instrr.keys():
